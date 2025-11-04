@@ -8,6 +8,7 @@ globs: *
 ## TECH STACK
 
 *   Added `jekyll` gem, replacing `github-pages` for Render.com deployments.
+*   Added `jekyll-theme-cayman` gem.
 
 ## PROJECT DOCUMENTATION & CONTEXT SYSTEM
 
@@ -15,7 +16,7 @@ globs: *
 
 ## WORKFLOW & RELEASE RULES
 
-*   **Hosting on Render.com:** When deploying to Render.com, use a `render.yaml` file for configuration to ensure reproducibility. This file should specify the build command (e.g., `bundle install && bundle exec jekyll build`) and the publish directory (e.g., `_site`). For root domain hosting, ensure the `baseurl` in `_config.yml` is set to an empty string (`""`).
+*   **Hosting on Render.com:** When deploying to Render.com, use a `render.yaml` file for configuration to ensure reproducibility. This file should specify the build command (e.g., `bundle install && bundle exec jekyll build`) and the publish directory (e.g., `_site`). For root domain hosting, ensure the `baseurl` in `_config.yml` is set to an empty string (`""`). The `render.yaml` file should specify `type: static`.
 
 ## DEBUGGING
 
@@ -51,4 +52,5 @@ globs: *
     1.  **Preferred Gem:** Switch from the `github-pages` gem to the standard `jekyll` gem for a smaller dependency footprint and more control over gem versions.
         *   Remove `github-pages` from the `Gemfile`.
         *   Ensure `jekyll` and any necessary plugins (e.g., `jekyll-feed`) are explicitly listed in the `Gemfile`.
+        *   Ensure `jekyll-theme-cayman` is explicitly listed in the `Gemfile`.
     2.  **Alternative (github-pages):** The `github-pages` gem can also be used on Render.com, but using the standard `jekyll` gem is preferred.
