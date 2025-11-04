@@ -1,0 +1,54 @@
+---
+description: AI rules derived by SpecStory from the project AI interaction history
+globs: *
+---
+
+## HEADERS
+
+## TECH STACK
+
+*   Added `jekyll` gem, replacing `github-pages` for Render.com deployments.
+
+## PROJECT DOCUMENTATION & CONTEXT SYSTEM
+
+## CODING STANDARDS
+
+## WORKFLOW & RELEASE RULES
+
+*   **Hosting on Render.com:** When deploying to Render.com, use a `render.yaml` file for configuration to ensure reproducibility. This file should specify the build command (e.g., `bundle install && bundle exec jekyll build`) and the publish directory (e.g., `_site`). For root domain hosting, ensure the `baseurl` in `_config.yml` is set to an empty string (`""`).
+
+## DEBUGGING
+
+## LOCAL DEVELOPMENT ENVIRONMENT SETUP
+
+*   **Prerequisites:**
+    *   Ruby (2.7 or newer recommended)
+    *   Bundler: Install with `gem install bundler`
+    *   `asdf` (recommended) for managing Ruby versions.
+
+*   **Steps to Build and Run Locally:**
+    1.  Install dependencies:
+        ```bash
+        bundle install
+        ```
+        This installs Jekyll and the GitHub Pages dependencies from the `Gemfile`.
+    2.  Run the Jekyll development server:
+        ```bash
+        bundle exec jekyll serve
+        ```
+        The site will be available at `http://localhost:4000` (or the port Jekyll indicates).
+    3.  (Optional) Include drafts and future posts:
+        ```bash
+        bundle exec jekyll serve --drafts --future
+        ```
+
+*   **Configuration Notes:**
+    *   The site uses the `jekyll-theme-cayman` theme (configured in `_config.yml`).
+    *   The `baseurl` is set to `/hosting-parsons-on-github-template`. Adjust this if running locally with a different base path.
+    *   Jekyll automatically regenerates the site when files are changed, enabling live reload during development.
+
+*   **Gem Management:** When deploying to Render.com:
+    1.  **Preferred Gem:** Switch from the `github-pages` gem to the standard `jekyll` gem for a smaller dependency footprint and more control over gem versions.
+        *   Remove `github-pages` from the `Gemfile`.
+        *   Ensure `jekyll` and any necessary plugins (e.g., `jekyll-feed`) are explicitly listed in the `Gemfile`.
+    2.  **Alternative (github-pages):** The `github-pages` gem can also be used on Render.com, but using the standard `jekyll` gem is preferred.

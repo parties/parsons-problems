@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: parsons-problems
+    buildCommand: bundle install && bundle exec jekyll build
+    staticPublishPath: _site
+
